@@ -1,0 +1,19 @@
+.container
+  = link_to 'Create Resume', new_user_path
+  -if @user.present?  
+    table.table.table-striped
+      thead
+        tr
+          th Name
+          th Email
+          th Phone No
+          / th Edit
+          th View
+      tbody
+        - @user.each do |user|
+          tr
+            td = user.name
+            td = user.email
+            td = user.phone
+            / td = link_to 'Edit', edit_user_path(user)
+            td = link_to 'View', user_path(user)

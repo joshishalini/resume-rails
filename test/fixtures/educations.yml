@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  per: 1.5
+  year: MyString
+  type: 
+
+two:
+  per: 1.5
+  year: MyString
+  type: 

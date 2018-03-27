@@ -1,0 +1,14 @@
+.form-group
+	= label_tag :title
+	= text_field_tag "user[projects_attributes][][title]","", class: "form-control", required: true
+.form-group	
+	lable description
+	= text_field_tag "user[projects_attributes][][des]","", class: "form-control", required: true
+.form-group	
+	= label_tag :title
+	= text_field_tag "user[projects_attributes][][title]","", class: "form-control"
+.form-group
+	lable description
+	= text_field_tag "user[projects_attributes][][des]","", class: "form-control"	
+	= f.hidden_field :step, :value => "3"
+	= f.submit

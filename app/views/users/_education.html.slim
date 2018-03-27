@@ -1,0 +1,29 @@
+.form-group	
+	lable education
+	= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '}
+.form-group
+	lable Percentage
+	= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
+.form-group	
+	= label_tag :year
+	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
+.form-group	
+	lable education
+	= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '} 
+.form-group
+	lable Percentage
+	= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
+.form-group	
+	= label_tag :year
+	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
+.form-group	
+	lable education
+	= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '}
+.form-group
+	lable Percentage
+	= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
+.form-group	
+	= label_tag :year
+	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
+	= f.hidden_field :step, :value => "2"
+	= f.submit

@@ -1,0 +1,14 @@
+.container
+	.panel.panel-default
+		.panel-heading Details
+		.panel-body
+			= form_for @user, :html => { class: "demo-form", multipart: true}  do |f|
+				-if @user.step == 0
+					= render partial: "profile", locals: {f: f}    	
+				-elsif @user.step == 1
+					= render partial: "education", locals: {f: f}
+				-elsif @user.step == 2
+					= render partial: "project", locals: {f: f}
+				-else
+					= render partial: "experiences", locals: {f: f}
+					

@@ -1,0 +1,101 @@
+body#top
+		#cv.instaFade
+			.mainDetails
+				#name
+					h1.quickFade.delayTwo 
+						= @user.name
+					h2.quickFade.delayThree 
+						
+				#contactDetails.quickFade.delayFour
+					ul
+						li
+							| Email:
+							= @user.email
+						li 
+							| Mobile No:
+							= @user.phone
+				.clear
+			#mainArea.quickFade.delayFive
+				section
+					article
+						.sectionTitle
+							h1 Objective
+						.sectionContent
+							p 
+							= @user.obj
+					.clear
+				section
+					article
+						.sectionTitle
+							h1 Work Experience
+						.sectionContent
+							table.table.table-striped
+								tr
+									th Company Name
+									th Designation
+									th To
+									th From
+								- @user.experiences.each do |exp|
+									tr
+										td = exp.comp_name
+										td = exp.designation
+										td = exp.to
+										td = exp.from
+					.clear
+				section
+					article
+						.col-md-12
+							.sectionTitle
+								h1 Education
+							.sectionContent
+								table.table.table-striped
+									tr
+										th Type
+										th Year
+										th Persentage
+									- @user.educations.each do |edu|
+										tr
+											td = edu.education
+											td = edu.year
+											td = edu.per 
+						.clear
+				section
+					article
+						.sectionTitle
+							h1 Projects
+						.sectionContent
+							- @user.projects.each do |pro|
+								h3 = pro.title
+								p.subDetails  = pro.des
+						.clear
+				section
+					article
+						.sectionTitle
+							h1 Personal Details
+						.sectionContent
+							.col-md-6
+								p Father's Name:
+							.col-md-6
+								p	
+									= @user.father
+							.col-md-6
+								p Mother's Name:
+							.col-md-6
+								p 
+									= @user.mother
+							.col-md-6
+								p Gender:
+							.col-md-6
+								p 
+									= @user.gender
+							.col-md-6
+								p Hobbies:
+							.col-md-6
+								p 
+									= @user.hobbies
+							.col-md-6
+								p Strength:
+							.col-md-6
+								p 
+									= @user.strenght
+						.clear

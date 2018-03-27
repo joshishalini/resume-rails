@@ -1,0 +1,38 @@
+.form-group
+	lable Company Name
+	= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control", required: true
+.form-group	
+	= label_tag :designation
+	= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control", required: true
+.form-group	
+	= label_tag :from
+	= text_field_tag "user[experiences_attributes][][from]","", class: "form-control", required: true
+.form-group
+	= label_tag :to
+	= text_field_tag "user[experiences_attributes][][to]","", class: "form-control", required: true
+.form-group
+	lable Company Name
+	= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control"
+.form-group	
+	= label_tag :designation
+	= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control"
+.form-group	
+	= label_tag :from
+	= text_field_tag "user[experiences_attributes][][from]","", class: "form-control"
+.form-group
+	= label_tag :to
+	= text_field_tag "user[experiences_attributes][][to]","", class: "form-control"
+.form-group
+	lable Company Name
+	= text_field_tag "user[experiences_attributes][][comp_name]","", class: "form-control"
+.form-group	
+	= label_tag :designation
+	= text_field_tag "user[experiences_attributes][][designation]","", class: "form-control"
+.form-group	
+	= label_tag :from
+	= text_field_tag "user[experiences_attributes][][from]","", class: "form-control"
+.form-group
+	= label_tag :to
+	= text_field_tag "user[experiences_attributes][][to]","", class: "form-control"
+	= f.hidden_field :step, :value => "4"
+	= f.submit
