@@ -1,29 +1,34 @@
-.form-group
-	label Name
-	= f.text_field :name, class: "form-control", placeholder:"Name", required: true
-.form-group	
-	label Email
-	= f.text_field :email, class: "form-control", placeholder:"Email", required: true
-.form-group
-	label Phone No
-	= f.text_field :phone, class: "form-control", placeholder:"Mobile No", required: true
-.form-group
-	lable Father's Name
-	= f.text_field :father, class: "form-control", placeholder:"Father's Name" 
-.form-group
-	label Mother's Name
-	= f.text_field :mother, class: "form-control", placeholder:"Mother's Name" 
-.form-group
-	label Gender
-	= f.select :gender, options_for_select(['Male', 'Female']), {},{class: 'form-control '} 
-.form-group
-	label Objective
-	= f.text_area :obj, class: "form-control", placeholder:"Objective"
-.form-group
-	label Hobbies
-	= f.text_field :hobbies, class: "form-control", placeholder:"Hobbies"
-.form-group
-	label Strenght
-	= f.text_field :strenght, class: "form-control", placeholder:"Strenght"
-	= f.hidden_field :step, :value => "1"
-	= f.submit
+.row
+	.col-md-6
+		label Name
+		= f.text_field :name, class: "form-control", placeholder:"Name", required: true	
+	.col-md-6
+		label Email
+		= f.email_field :email, class: "form-control", placeholder:"Email", required: true
+.row
+	.col-md-6
+		label Phone No
+		= f.text_field :phone, class: "form-control", placeholder:"Mobile No", required: true
+	.col-md-6
+		lable Father's Name
+		= f.text_field :father, class: "form-control", placeholder:"Father's Name"
+.row 
+	.col-md-6
+		label Mother's Name
+		= f.text_field :mother, class: "form-control", placeholder:"Mother's Name" 
+	.col-md-6
+		label Gender
+		= f.select :gender, options_for_select(['Male', 'Female']), {},{class: 'form-control '} 
+.row
+	.col-md-6
+		label Hobbies
+		= f.text_field :hobbies, class: "form-control", placeholder:"Hobbies"
+	.col-md-6
+		label Strenght
+		= f.text_field :strenght, class: "form-control", placeholder:"Strenght"
+.row
+		.col-md-12
+			label Objective
+			= f.text_area :obj, class: "form-control", placeholder:"Objective"
+		= f.hidden_field :step, :value => "1"
+		= f.submit

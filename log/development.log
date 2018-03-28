@@ -8374,3 +8374,693 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2018-03-28 12:35:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (48.8ms)
+Completed 200 OK in 464ms (Views: 440.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:36:01 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (40.3ms)
+  Rendered users/new.html.slim within layouts/application (47.6ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:36:13 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.0ms)
+  Rendered users/new.html.slim within layouts/application (16.1ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:39:26 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.6ms)
+  Rendered users/new.html.slim within layouts/application (12.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 12:40:06 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"15/m/5Fb+jUX+teqvcebVDJxewEfS+1jhfEb7bDsQyXWwk/p3l3klAec/H4Zsk1gGc5oBtxqbAXIQLSy/anFUg==", "user"=>{"name"=>"njkjjhk", "email"=>"jd@l.com", "phone"=>"9999999999", "father"=>"hjjk", "mother"=>"jhj", "gender"=>"Female", "obj"=>"jjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui vjjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui jjsadhjsaydsau siadui", "hobbies"=>"hjkddjkdkj dsahjkdhajsk", "strenght"=>"shajdaj", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveModel::RangeError (9999999999 is out of range for ActiveModel::Type::Integer with limit 4):
+  
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeColumnDatatype (20180328071111)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" integer, "obj" text, "father" varchar, "mother" varchar, "gender" varchar, "hobbies" varchar, "strenght" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "step" integer DEFAULT 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","phone","obj","father","mother","gender","hobbies","strenght","created_at","updated_at","step")
+                     SELECT "id","name","email","phone","obj","father","mother","gender","hobbies","strenght","created_at","updated_at","step" FROM "users"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "obj" text, "father" varchar, "mother" varchar, "gender" varchar, "hobbies" varchar, "strenght" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "step" integer DEFAULT 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","name","email","phone","obj","father","mother","gender","hobbies","strenght","created_at","updated_at","step")
+                     SELECT "id","name","email","phone","obj","father","mother","gender","hobbies","strenght","created_at","updated_at","step" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180328071111"]]
+  [1m[35m (67.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/new" for ::1 at 2018-03-28 12:41:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.3ms)
+  Rendered users/new.html.slim within layouts/application (15.2ms)
+Completed 200 OK in 64ms (Views: 43.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 12:42:27 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gUSLZLT5OLpPK5WzFGT5M+xp6W0IFBgon8euq4Z21N6AGSJy+/8mG19NvmewES8Hx9b6ass1mU7SdgH0yzNSqQ==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini@tayh.com", "phone"=>"9999999999", "father"=>"vikas joshi", "mother"=>"Madhu joshi", "gender"=>"Female", "obj"=>"change_column(:users, :phone, :string) change_column(:users, :phone, :string)\r\nchange_column(:users, :phone, :string)change_column(:users, :phone, :string) change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)", "hobbies"=>"jsjkadhdkjj", "strenght"=>"hjshajkd", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini@tayh.com"], ["phone", "9999999999"], ["obj", "change_column(:users, :phone, :string) change_column(:users, :phone, :string)\r\nchange_column(:users, :phone, :string)change_column(:users, :phone, :string) change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)"], ["father", "vikas joshi"], ["mother", "Madhu joshi"], ["gender", "Female"], ["hobbies", "jsjkadhdkjj"], ["strenght", "hjshajkd"], ["created_at", "2018-03-28 07:12:27.152146"], ["updated_at", "2018-03-28 07:12:27.152146"], ["step", 1]]
+  [1m[35m (220.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (6.4ms)
+  Rendered users/new.html.slim within layouts/application (26.2ms)
+Completed 200 OK in 279ms (Views: 52.9ms | ActiveRecord: 222.0ms)
+
+
+Started PATCH "/users/34" for ::1 at 2018-03-28 12:42:47 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s02GdaeEZ3cA9fJhyHNCifEHDh08zGWBVn3sZQhRBVyyEC9j6IJ51hCT2bVsBpS92rgdGv/t5OcbzEM6RRSDKw==", "user"=>{"educations_attributes"=>[{"education"=>"SSC", "per"=>"89", "year"=>"2019"}, {"education"=>"HSS", "per"=>"20", "year"=>"1200"}, {"education"=>"Graduation", "per"=>"99", "year"=>"2019"}], "step"=>"2"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "step" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["step", 2], ["updated_at", "2018-03-28 07:12:47.882497"], ["id", 34]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "educations" ("per", "year", "education", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["per", "89"], ["year", "2019"], ["education", "SSC"], ["created_at", "2018-03-28 07:12:47.886123"], ["updated_at", "2018-03-28 07:12:47.886123"], ["user_id", 34]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "educations" ("per", "year", "education", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["per", "20"], ["year", "1200"], ["education", "HSS"], ["created_at", "2018-03-28 07:12:47.887165"], ["updated_at", "2018-03-28 07:12:47.887165"], ["user_id", 34]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "educations" ("per", "year", "education", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["per", "99"], ["year", "2019"], ["education", "Graduation"], ["created_at", "2018-03-28 07:12:47.887947"], ["updated_at", "2018-03-28 07:12:47.887947"], ["user_id", 34]]
+  [1m[35m (137.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_project.html.slim (3.9ms)
+  Rendered users/new.html.slim within layouts/application (9.2ms)
+Completed 200 OK in 227ms (Views: 33.2ms | ActiveRecord: 139.1ms)
+
+
+Started PATCH "/users/34" for ::1 at 2018-03-28 12:42:59 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"siGZCnppMvj8L/DnBxM5a9H4FQTgmC84IAmYsd0EUdKzfDAcNW8sWexJ2zOjZu9f+kcGAyO5rl5tuDfukEHXpQ==", "user"=>{"projects_attributes"=>[{"title"=>"sadyuauds dysaudysuai", "des"=>"change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)"}, {"title"=>"hjahjdhyqweu", "des"=>"change_column(:users, :phone, :string)change_column(:users, :phone, :string)"}], "step"=>"3"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "step" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["step", 3], ["updated_at", "2018-03-28 07:12:59.517902"], ["id", 34]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "des", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "sadyuauds dysaudysuai"], ["des", "change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)change_column(:users, :phone, :string)"], ["created_at", "2018-03-28 07:12:59.520554"], ["updated_at", "2018-03-28 07:12:59.520554"], ["user_id", 34]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "des", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "hjahjdhyqweu"], ["des", "change_column(:users, :phone, :string)change_column(:users, :phone, :string)"], ["created_at", "2018-03-28 07:12:59.522347"], ["updated_at", "2018-03-28 07:12:59.522347"], ["user_id", 34]]
+  [1m[35m (223.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_experiences.html.slim (10.8ms)
+  Rendered users/new.html.slim within layouts/application (16.8ms)
+Completed 200 OK in 325ms (Views: 47.7ms | ActiveRecord: 225.5ms)
+
+
+Started PATCH "/users/34" for ::1 at 2018-03-28 12:43:24 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GhJJKzyl1oGPphd2L9LyNtlKIprl6xjdU6YgYVpYCZMbT+A9c6PIIJ/APKKLpyQC8vUxnSbKmbseF48+Fx2P5A==", "user"=>{"experiences_attributes"=>[{"comp_name"=>"w3villa Tech", "designation"=>"software engineer", "from"=>"jan 2017", "to"=>"na"}, {"comp_name"=>"", "designation"=>"", "from"=>"", "to"=>""}, {"comp_name"=>"", "designation"=>"", "from"=>"", "to"=>""}], "step"=>"4"}, "commit"=>"Update User", "id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "step" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["step", 4], ["updated_at", "2018-03-28 07:13:24.178925"], ["id", 34]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "experiences" ("comp_name", "designation", "from", "to", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["comp_name", "w3villa Tech"], ["designation", "software engineer"], ["from", "jan 2017"], ["to", "na"], ["created_at", "2018-03-28 07:13:24.183009"], ["updated_at", "2018-03-28 07:13:24.183009"], ["user_id", 34]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "experiences" ("comp_name", "designation", "from", "to", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["comp_name", ""], ["designation", ""], ["from", ""], ["to", ""], ["created_at", "2018-03-28 07:13:24.184223"], ["updated_at", "2018-03-28 07:13:24.184223"], ["user_id", 34]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "experiences" ("comp_name", "designation", "from", "to", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["comp_name", ""], ["designation", ""], ["from", ""], ["to", ""], ["created_at", "2018-03-28 07:13:24.185060"], ["updated_at", "2018-03-28 07:13:24.185060"], ["user_id", 34]]
+  [1m[35m (212.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3002/users/34
+Completed 302 Found in 261ms (ActiveRecord: 215.1ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 12:43:24 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.8ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (31.2ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 12:44:16 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (27.2ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2018-03-28 12:44:39 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (9.4ms)
+Completed 200 OK in 42ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:46:34 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (10.0ms)
+  Rendered users/new.html.slim within layouts/application (16.2ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:49:09 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.1ms)
+  Rendered users/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-03-28 12:52:04 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (7.5ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 12:52:07 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.1ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (26.5ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 12:52:48 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.1ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (18.6ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-03-28 12:53:01 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (12.2ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:03 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (10.7ms)
+  Rendered users/new.html.slim within layouts/application (17.7ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:41 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.4ms)
+  Rendered users/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:44 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.1ms)
+  Rendered users/new.html.slim within layouts/application (12.0ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:44 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.4ms)
+  Rendered users/new.html.slim within layouts/application (12.5ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:45 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (9.0ms)
+  Rendered users/new.html.slim within layouts/application (16.8ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:53:45 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (10.1ms)
+  Rendered users/new.html.slim within layouts/application (15.8ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:54:30 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (5.7ms)
+  Rendered users/new.html.slim within layouts/application (10.0ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:55:00 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.7ms)
+  Rendered users/new.html.slim within layouts/application (12.5ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:55:16 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.8ms)
+  Rendered users/new.html.slim within layouts/application (11.2ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:56:44 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unknown validator: 'EmailFormatValidator'):
+  
+app/models/user.rb:10:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:8:in `new'
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.8ms)
+Started GET "/users/new" for ::1 at 2018-03-28 12:57:52 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.8ms)
+  Rendered users/new.html.slim within layouts/application (12.5ms)
+Completed 200 OK in 58ms (Views: 41.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:59:00 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.4ms)
+  Rendered users/new.html.slim within layouts/application (14.5ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:59:02 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.0ms)
+  Rendered users/new.html.slim within layouts/application (12.5ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 12:59:28 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.6ms)
+  Rendered users/new.html.slim within layouts/application (11.3ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:00:26 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.8ms)
+  Rendered users/new.html.slim within layouts/application (13.2ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:01:03 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (5.8ms)
+  Rendered users/new.html.slim within layouts/application (11.3ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:01:11 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.5ms)
+  Rendered users/new.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:01:13 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.2ms)
+  Rendered users/new.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 13:02:08 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5b+/I22KPV+vlk9sRKzZpMuxnlXFD68V+tXMVY52C4nk4hY1Iowj/r/wZLjg2Q+Q4A6NUgYuLnO3ZGMKwzON/g==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini.joshi@w3villa.com", "phone"=>"9999999999", "father"=>"", "mother"=>"", "gender"=>"Male", "obj"=>"", "hobbies"=>"", "strenght"=>"", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini.joshi@w3villa.com"], ["phone", "9999999999"], ["obj", ""], ["father", ""], ["mother", ""], ["gender", "Male"], ["hobbies", ""], ["strenght", ""], ["created_at", "2018-03-28 07:32:08.357769"], ["updated_at", "2018-03-28 07:32:08.357769"], ["step", 1]]
+  [1m[35m (177.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (6.7ms)
+  Rendered users/new.html.slim within layouts/application (14.8ms)
+Completed 200 OK in 230ms (Views: 44.0ms | ActiveRecord: 179.5ms)
+
+
+Started GET "/users" for ::1 at 2018-03-28 13:02:43 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (7.4ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:02:45 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (14.5ms)
+  Rendered users/new.html.slim within layouts/application (23.7ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:03:03 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.9ms)
+  Rendered users/new.html.slim within layouts/application (14.6ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:05:55 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.3ms)
+  Rendered users/new.html.slim within layouts/application (15.0ms)
+Completed 200 OK in 62ms (Views: 42.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 13:06:12 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r/tV9B8XrObqkP6y4EEIYYNKjny3rc3sn4S/I2dHLaKupvziUBGyR/r21WZENN5VqPWde3SMTIrSNRB8KgKr1Q==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini.joshi@w3villa.com", "phone"=>"1111111111", "father"=>"vikas joshi", "mother"=>"Madhu joshi", "gender"=>"Female", "obj"=>"jnnnnnnnnnnnnnn", "hobbies"=>"hjsaj", "strenght"=>"hjh", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini.joshi@w3villa.com"], ["phone", "1111111111"], ["obj", "jnnnnnnnnnnnnnn"], ["father", "vikas joshi"], ["mother", "Madhu joshi"], ["gender", "Female"], ["hobbies", "hjsaj"], ["strenght", "hjh"], ["created_at", "2018-03-28 07:36:12.119683"], ["updated_at", "2018-03-28 07:36:12.119683"], ["step", 1]]
+  [1m[35m (205.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (7.7ms)
+  Rendered users/new.html.slim within layouts/application (14.5ms)
+Completed 200 OK in 256ms (Views: 41.5ms | ActiveRecord: 206.3ms)
+
+
+Started PATCH "/users/36" for ::1 at 2018-03-28 13:06:30 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X0l7lx5TWlxwICiHZSLVhIFGFvUbhNewZJzF72WTyYNeFNKBUVVE/WBGA1PBVwOwqvkF8tilVtYpLWqwKNZP9A==", "user"=>{"educations_attributes"=>[{"education"=>"SSC", "per"=>"678", "year"=>"2019"}, {"education"=>"SSC", "per"=>"67", "year"=>"67"}, {"education"=>"HSS", "per"=>"678", "year"=>"67"}], "step"=>"2"}, "commit"=>"Update User", "id"=>"36"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEducation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "SSC"], ["LIMIT", 1]]
+  [1m[36mEducation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "SSC"], ["LIMIT", 1]]
+  [1m[36mEducation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "HSS"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for UsersController#update, rendering head :no_content
+Completed 204 No Content in 55ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for ::1 at 2018-03-28 13:08:20 +0530
+  
+SyntaxError (/home/shalini/work/resume-rails/app/controllers/users_controller.rb:33: syntax error, unexpected =>, expecting keyword_end
+			:flash=> {:error => @requirement.errors.full_messages.join(', ')}
+			        ^):
+  
+app/controllers/users_controller.rb:33: syntax error, unexpected =>, expecting keyword_end
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/shalini/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.9ms)
+Started GET "/users" for ::1 at 2018-03-28 13:11:31 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (21.0ms)
+Completed 200 OK in 58ms (Views: 47.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:11:33 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (11.3ms)
+  Rendered users/new.html.slim within layouts/application (19.3ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 13:12:42 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k/VgcF9E74kWBkjkcMMroc0pQsEGyW0nhTwtENp1EmlO4oQ8jWMFwPrtJPFGGUpdJHPjZbUMrGoRsykaYbM//g==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini@tayh.com", "phone"=>"9999999999", "father"=>"", "mother"=>"", "gender"=>"Male", "obj"=>"", "hobbies"=>"", "strenght"=>"", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini@tayh.com"], ["phone", "9999999999"], ["obj", ""], ["father", ""], ["mother", ""], ["gender", "Male"], ["hobbies", ""], ["strenght", ""], ["created_at", "2018-03-28 07:42:42.536121"], ["updated_at", "2018-03-28 07:42:42.536121"], ["step", 1]]
+  [1m[35m (148.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (6.0ms)
+  Rendered users/new.html.slim within layouts/application (15.9ms)
+Completed 200 OK in 198ms (Views: 42.0ms | ActiveRecord: 149.2ms)
+
+
+Started GET "/users/22" for ::1 at 2018-03-28 13:13:12 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mEducation Load (0.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered users/show.html.slim within layouts/application (41.2ms)
+Completed 200 OK in 68ms (Views: 62.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2018-03-28 13:13:19 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (9.5ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 13:13:23 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (30.5ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/34" for ::1 at 2018-03-28 13:13:29 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering users/show.html.slim within layouts/application
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences" WHERE "experiences"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mEducation Load (0.1ms)[0m  [1m[34mSELECT "educations".* FROM "educations" WHERE "educations"."user_id" = ?[0m  [["user_id", 34]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 34]]
+  Rendered users/show.html.slim within layouts/application (20.3ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:16:00 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.3ms)
+  Rendered users/new.html.slim within layouts/application (13.6ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:16:52 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (12.9ms)
+  Rendered users/new.html.slim within layouts/application (20.4ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:17:22 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/new.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:17:40 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (9.5ms)
+  Rendered users/new.html.slim within layouts/application (15.3ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:18:10 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.5ms)
+  Rendered users/new.html.slim within layouts/application (13.7ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:18:24 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.3ms)
+  Rendered users/new.html.slim within layouts/application (13.3ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:18:34 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.5ms)
+  Rendered users/new.html.slim within layouts/application (13.1ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:18:53 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.4ms)
+  Rendered users/new.html.slim within layouts/application (11.8ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:19:06 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (9.2ms)
+  Rendered users/new.html.slim within layouts/application (14.6ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:19:17 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.3ms)
+  Rendered users/new.html.slim within layouts/application (13.7ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:19:30 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (16.9ms)
+  Rendered users/new.html.slim within layouts/application (21.5ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:22:29 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.4ms)
+  Rendered users/new.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:23:14 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.9ms)
+  Rendered users/new.html.slim within layouts/application (12.2ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:23:44 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.6ms)
+  Rendered users/new.html.slim within layouts/application (11.7ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:23:51 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (11.2ms)
+  Rendered users/new.html.slim within layouts/application (19.1ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:24:23 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (8.3ms)
+  Rendered users/new.html.slim within layouts/application (13.7ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:25:13 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (7.3ms)
+  Rendered users/new.html.slim within layouts/application (13.6ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 13:26:27 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (6.9ms)
+  Rendered users/new.html.slim within layouts/application (11.6ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 13:26:33 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VovlTr5JDUwQwXlycS6VFo3NuVmgHoIxHI+h1eHWpd1X1kxY8U8T7QCnUqbVW0MipnKqXmM/A1dRPg6KrJMjqg==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini@tayh.com", "phone"=>"1111111111", "father"=>"", "mother"=>"", "gender"=>"Male", "hobbies"=>"", "strenght"=>"", "obj"=>"", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini@tayh.com"], ["phone", "1111111111"], ["obj", ""], ["father", ""], ["mother", ""], ["gender", "Male"], ["hobbies", ""], ["strenght", ""], ["created_at", "2018-03-28 07:56:33.780932"], ["updated_at", "2018-03-28 07:56:33.780932"], ["step", 1]]
+  [1m[35m (163.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (9.5ms)
+  Rendered users/new.html.slim within layouts/application (17.3ms)
+Completed 200 OK in 216ms (Views: 44.0ms | ActiveRecord: 164.4ms)
+
+

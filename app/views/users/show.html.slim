@@ -33,14 +33,14 @@ body#top
 								tr
 									th Company Name
 									th Designation
-									th To
 									th From
+									th To
 								- @user.experiences.each do |exp|
 									tr
 										td = exp.comp_name
 										td = exp.designation
-										td = exp.to
 										td = exp.from
+										td = exp.to
 					.clear
 				section
 					article
@@ -99,3 +99,6 @@ body#top
 								p 
 									= @user.strenght
 						.clear
+
+-content_for :title do
+	="fcmdks"
