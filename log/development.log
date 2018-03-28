@@ -9064,3 +9064,44 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 216ms (Views: 44.0ms | ActiveRecord: 164.4ms)
 
 
+Started GET "/" for ::1 at 2018-03-28 14:50:37 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.slim within layouts/application (11.5ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2018-03-28 14:50:39 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_profile.html.slim (9.0ms)
+  Rendered users/new.html.slim within layouts/application (16.2ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-03-28 14:50:52 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KArNZLUOBm7O0/WUd7tEA1kjPhQ5vMUoxJ6EqAq3s/L1HSkoZynsJyI4mYFBYSX/sHmfsIp5BGVQEYCisXGeZQ==", "user"=>{"name"=>"shalini joshi", "email"=>"shalini@tayh.com", "phone"=>"9999999999", "father"=>"vikas joshi", "mother"=>"hjuhyui", "gender"=>"Female", "hobbies"=>"", "strenght"=>"", "obj"=>"", "step"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "phone", "obj", "father", "mother", "gender", "hobbies", "strenght", "created_at", "updated_at", "step") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shalini joshi"], ["email", "shalini@tayh.com"], ["phone", "9999999999"], ["obj", ""], ["father", "vikas joshi"], ["mother", "hjuhyui"], ["gender", "Female"], ["hobbies", ""], ["strenght", ""], ["created_at", "2018-03-28 09:20:52.428477"], ["updated_at", "2018-03-28 09:20:52.428477"], ["step", 1]]
+  [1m[35m (200.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering users/new.html.slim within layouts/application
+  Rendered users/_education.html.slim (6.6ms)
+  Rendered users/new.html.slim within layouts/application (12.2ms)
+Completed 200 OK in 243ms (Views: 35.6ms | ActiveRecord: 201.4ms)
+
+
+Started PATCH "/users/39" for ::1 at 2018-03-28 14:51:20 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FRTB1b56J9Q4s29ffN4OnVkSLFo59GfawSqblUfGef4USWjD8Xw5dSjVRIvYq9ipcq0/XfrV5ryMmzTKCoP/iQ==", "user"=>{"educations_attributes"=>[{"education"=>"SSC", "per"=>"66", "year"=>"6756"}, {"education"=>"HSS", "per"=>"77", "year"=>"78778"}, {"education"=>"Graduation", "per"=>"55", "year"=>"687"}], "step"=>"2"}, "commit"=>"Update User", "id"=>"39"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEducation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "SSC"], ["LIMIT", 1]]
+  [1m[36mEducation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "HSS"], ["LIMIT", 1]]
+  [1m[36mEducation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "educations" WHERE "educations"."education" = ? LIMIT ?[0m  [["education", "Graduation"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for UsersController#update, rendering head :no_content
+Completed 204 No Content in 26ms (ActiveRecord: 0.7ms)
+
+
