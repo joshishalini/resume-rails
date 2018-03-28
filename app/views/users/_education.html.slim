@@ -5,26 +5,31 @@
 		.col-md-6
 			lable Percentage
 			= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
-.col-md-6	
-	= label_tag :year
-	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
-.col-md-6	
-	lable education
-	= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '} 
-.col-md-6
-	lable Percentage
-	= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
-.col-md-6	
-	= label_tag :year
-	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
-.col-md-6	
-	lable education
-	= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '}
-.col-md-6
-	lable Percentage
-	= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
-.col-md-6	
-	= label_tag :year
-	= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
+.row
+	.col-md-6	
+		= label_tag :year
+		= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
+.row
+	.col-md-6	
+		lable education
+		= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '} 
+	.col-md-6
+		lable Percentage
+		= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
+.row
+	.col-md-6	
+		= label_tag :year
+		= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" 
+.row
+	.col-md-6	
+		lable education
+		= select_tag "user[educations_attributes][][education]", options_for_select(['SSC', 'HSS','Graduation']),{class: 'form-control '}
+	.col-md-6
+		lable Percentage
+		= text_field_tag "user[educations_attributes][][per]","", class: "form-control", required: true
+.row
+	.col-md-6	
+		= label_tag :year
+		= text_field_tag "user[educations_attributes][][year]","", class: "form-control", placeholder:"Year" , required: true
 	= f.hidden_field :step, :value => "2"
 	= f.submit
